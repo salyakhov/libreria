@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bilingual Essay</title>
+  <title>Essays</title>
+
   <style>
     body {
       font-family: Georgia, "Times New Roman", serif;
@@ -15,7 +16,7 @@
 
     .lang-switch {
       text-align: right;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     button {
@@ -24,21 +25,34 @@
       cursor: pointer;
     }
 
-    .essay {
+    h1 {
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    a {
+      text-decoration: none;
+      color: #003366;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lang {
       display: none;
     }
 
-    .essay.active {
+    .lang.active {
       display: block;
-    }
-
-    h1 {
-      margin-bottom: 0.3em;
-    }
-
-    .subtitle {
-      color: #666;
-      margin-bottom: 2em;
     }
   </style>
 </head>
@@ -50,58 +64,38 @@
     <button onclick="switchLang('ru')">RU</button>
   </div>
 
-  <!-- English version -->
-  <div id="essay-en" class="essay active">
-    <h1>The Meaning of Stillness</h1>
-    <div class="subtitle">An essay on attention and time</div>
-
-    <p>
-      Stillness is often misunderstood as the absence of movement.
-      In reality, it is the presence of attention.
-    </p>
-
-    <p>
-      In a world driven by speed and efficiency, stillness becomes
-      a rare skill. It allows thought to mature and emotions to settle.
-    </p>
-
-    <p>
-      To be still is not to stop living, but to notice life as it unfolds.
-    </p>
+  <!-- English -->
+  <div id="lang-en" class="lang active">
+    <h1>Victory Line</h1>
+    <ul>
+      <li>
+        <a href="shared-victory.html#en">
+          Translation of the Soviet film “Story of a Real Man” for cultural expansion abroad
+        </a>
+      </li>
+    </ul>
   </div>
 
-  <!-- Russian version -->
-  <div id="essay-ru" class="essay">
-    <h1>Смысл тишины</h1>
-    <div class="subtitle">Эссе о внимании и времени</div>
-
-    <p>
-      Тишину часто понимают как отсутствие движения.
-      На самом деле, это присутствие внимания.
-    </p>
-
-    <p>
-      В мире, движимом скоростью и эффективностью,
-      тишина становится редким навыком.
-      Она позволяет мыслям созревать, а эмоциям — успокаиваться.
-    </p>
-
-    <p>
-      Быть в тишине — значит не останавливаться,
-      а замечать жизнь в моменте.
-    </p>
+  <!-- Russian -->
+  <div id="lang-ru" class="lang">
+    <h1>Линейка Победы</h1>
+    <ul>
+      <li>
+        <a href="shared-victory.html#ru">
+          Перевод советского фильма «Повесть о настоящем человеке» для проведения  культурной экспансии за рубежом
+        </a>
+      </li>
+    </ul>
   </div>
 
   <script>
     function switchLang(lang) {
-      document.getElementById('essay-en').classList.remove('active');
-      document.getElementById('essay-ru').classList.remove('active');
+      document.getElementById('lang-en').classList.remove('active');
+      document.getElementById('lang-ru').classList.remove('active');
 
-      document.getElementById('essay-' + lang).classList.add('active');
+      document.getElementById('lang-' + lang).classList.add('active');
     }
   </script>
 
 </body>
 </html>
-
-
