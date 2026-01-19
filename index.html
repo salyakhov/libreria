@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bilingual Essay</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .essay {
+      display: none;
+    }
+
+    .essay.active {
+      display: block;
+    }
+
+    h1 {
+      margin-bottom: 0.3em;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <strong>Language:</strong>
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('ru')">RU</button>
+  </div>
+
+  <!-- English version -->
+  <div id="essay-en" class="essay active">
+    <h1>The Meaning of Stillness</h1>
+    <div class="subtitle">An essay on attention and time</div>
+
+    <p>
+      Stillness is often misunderstood as the absence of movement.
+      In reality, it is the presence of attention.
+    </p>
+
+    <p>
+      In a world driven by speed and efficiency, stillness becomes
+      a rare skill. It allows thought to mature and emotions to settle.
+    </p>
+
+    <p>
+      To be still is not to stop living, but to notice life as it unfolds.
+    </p>
+  </div>
+
+  <!-- Russian version -->
+  <div id="essay-ru" class="essay">
+    <h1>Смысл тишины</h1>
+    <div class="subtitle">Эссе о внимании и времени</div>
+
+    <p>
+      Тишину часто понимают как отсутствие движения.
+      На самом деле, это присутствие внимания.
+    </p>
+
+    <p>
+      В мире, движимом скоростью и эффективностью,
+      тишина становится редким навыком.
+      Она позволяет мыслям созревать, а эмоциям — успокаиваться.
+    </p>
+
+    <p>
+      Быть в тишине — значит не останавливаться,
+      а замечать жизнь в моменте.
+    </p>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.getElementById('essay-en').classList.remove('active');
+      document.getElementById('essay-ru').classList.remove('active');
+
+      document.getElementById('essay-' + lang).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
+
